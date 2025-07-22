@@ -1,0 +1,182 @@
+//Inheritance
+using System;
+
+class Animal
+{
+    virtual public void an() {
+        Console.WriteLine("This is Animal");
+    }
+}
+
+class Dog : Animal
+{
+    override public void an()
+    {
+        Console.WriteLine("This is a Dog");
+    }
+}
+
+class main
+{
+    static void Main(string[] args)
+    {
+        Dog d = new Dog();
+        d.an();
+
+        Animal a = new Dog();
+        a.an();
+
+    }
+}
+
+//create a class that has Properties, Fields, Methods, Constructors of class Student
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+class Student
+{
+    //fields
+    private int id;
+    private string name;
+    private int age;
+    private int marks;
+
+    //properties
+    public int Id
+    {
+        get { return id; }
+        set { id = value; }
+    }
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+    public int Age
+    {
+        get { return age; }
+        set {
+            if (value > 0)
+            {
+                age = value;
+            }
+            else
+            {
+                Console.WriteLine("Age must be positive...");
+            }
+        }
+    }
+    public int Marks
+    {
+        get { return marks; }
+        set
+        {
+            if(marks>=0 && marks <= 100)
+            {
+                marks = value;
+            }
+            else
+            {
+                Console.WriteLine("Enter the correct marks...");
+            }
+        }
+    }
+
+    //constructer
+   //public Student(int id,string name,int age, int marks)
+   // {
+   //     this.id = id;
+   //     this.name = name;
+   //     this.age = age;
+   //     this.marks = marks;
+   // }
+   public void input()
+    {
+        Console.WriteLine("Enter the Id:");
+        String input1 = Console.ReadLine();
+        id = int.Parse(input1);
+
+        Console.WriteLine("Enter the Name:");
+        String input2 = Console.ReadLine();
+        name = input2;
+
+        Console.WriteLine("Enter the age:");
+        string input3 = Console.ReadLine();
+        age = int.Parse(input3);
+
+        Console.WriteLine("Enter the Marks:");
+        string input4 = Console.ReadLine();
+        marks = int.Parse(input4);
+
+
+    }
+    //Method
+    public void display()
+    {
+        Console.WriteLine("Id is:" + id);
+        Console.WriteLine("Name is:" + name);
+        Console.WriteLine("Age is:" + age);
+        Console.WriteLine("Marks are:" + marks);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Student s1 = new Student();
+        s1.input();
+        s1.display();
+
+    }
+}
+
+//Array
+using System;
+
+class student
+{
+    static void Main(String[] args)
+    {
+        int[] arr = { 10, 20, 30, 40, 50 };
+        for (int i = 0; i < arr.Length; i++)
+            Console.WriteLine(arr[i]);
+        
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
